@@ -11,7 +11,11 @@ import SwiftUI
 struct SwiftUI_View_FontsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+          if UIDevice.current.userInterfaceIdiom == .pad {
+            FontBrowserView()
+          } else {
+            FontListView()
+          }
         }
     }
 }
